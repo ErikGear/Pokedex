@@ -2,7 +2,7 @@ const pokemonesCompletos = [];
 
 const main = document.querySelector("main");
 
-const url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
+const url = "https://pokeapi.co/api/v2/pokemon?limit=102&offset=0";
 
 const getPokemons = async () => {
   try {
