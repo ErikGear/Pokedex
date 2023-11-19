@@ -9,12 +9,12 @@ const getPokemons = async () => {
     //hacemos la petición
     const respuestaPeticion = await fetch(url);
 
-    console.log(respuestaPeticion);
+    //console.log(respuestaPeticion);
 
     //recogemos la respuesta y la transforma a formato JSON
     const respuestaJSON = await respuestaPeticion.json();
 
-    console.log(respuestaJSON);
+    //console.log(respuestaJSON);
 
     //del JSON resultante, mem interesa la propiedad con el nombre RESULTS la cual tiene el arreglo con los pokemones
     const pokemones = respuestaJSON.results;
@@ -30,7 +30,7 @@ const getPokemons = async () => {
       const respuestaDatosPokemon = await fetch(urlPokemon);
       const datosPokemonJson = await respuestaDatosPokemon.json();
 
-      console.log(datosPokemonJson);
+      //console.log(datosPokemonJson);
 
       //aramando al pokemon
       getCaracteristicas(nombrePokemon, datosPokemonJson);
@@ -53,9 +53,10 @@ const renderizadoTarjetasPokemon = () => {
   
               <div class="bg-pokemon-description">
                   <p class="pokemon-name">${pokemon.nombrePokemon}</p>
-                  <p class="tipo-pokemon"></p>
-                  <p class="tipo-pokemon"></p>
-                  <p class="peso-pokemon">Peso: ${pokemon.pesoPokemon}</p>
+                  <p class="bg-tipo-pokemon">
+                  ${pokemon.tiposPokemon}
+                  </p>
+                  <p class="peso-pokemon">Peso: ${pokemon.pesoPokemon}kg</p>
               </div>
   
           </article>
@@ -68,13 +69,17 @@ const renderizadoTarjetasPokemon = () => {
 const getCaracteristicas = (nombrePokemon, datosPokemon) => {
   const idPokemon = datosPokemon.id;
   const imagenPokemon = datosPokemon.sprites.other["dream_world"].front_default;
-  const tipoPokemon = [];
 
-  for (const tipo of datosPokemon.types) {
-    tipoPokemon.push(tipo.type.name);
-  }
-  //tipoPokemon.push(datosPokemon.types[0].type.name);
-  //tipoPokemon.push(datosPokemon.types[0].type.name);
+  //extrayendo los tipos de cada pokemon
+  let tiposPokemon = datosPokemon.types.map(tipo => `
+    <p class="tipo-pokemon">${tipo.type.name}</p>
+  `);
+
+  tiposPokemon = tiposPokemon.join('');
+
+
+
+  console.log(tiposPokemon);
 
   const pesoPokemon = datosPokemon.weight;
   const habilidadesPokemon = [];
@@ -89,9 +94,9 @@ const getCaracteristicas = (nombrePokemon, datosPokemon) => {
     idPokemon,
     nombrePokemon,
     imagenPokemon,
-    tipoPokemon,
     pesoPokemon,
-    habilidadesPokemon
+    habilidadesPokemon,
+    tiposPokemon
   };
 
   //agregando al arreglo de pokemones completos
