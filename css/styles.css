@@ -40,6 +40,30 @@ main {
   height: 20rem;
 }
 
+.menu-principal {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-principal--lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  list-style-type: none;
+}
+
+.btn-tipo {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
 .titulo-principal__logo {
   object-fit: contain;
   width: 100%;
