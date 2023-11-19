@@ -48,13 +48,23 @@ main {
   align-items: center;
 }
 
+.bg-formulario {
+  display: flex;
+  gap: 1.5rem;
+  
+}
+
+#btn-buscar {
+  color: #000000;
+}
+
 #busqueda {
   font-size: 2rem;
   outline: none;
 
   height: 3.5rem;
   width: 25rem;
-  padding: 0.5rem 0rem;
+  padding: 1rem 0rem;
 
   border: none;
   background-color: transparent;
