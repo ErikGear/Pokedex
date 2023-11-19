@@ -84,6 +84,11 @@ main {
   border-radius: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.pokemon-name {
+  text-transform: uppercase;
+}
+
 .card-image {
   object-fit: contain;
   width: 100%;
