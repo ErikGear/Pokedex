@@ -45,8 +45,30 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
 
-  justify-content: center;
   align-items: center;
+}
+
+#busqueda {
+  font-size: 2rem;
+  outline: none;
+
+  height: 3.5rem;
+  width: 25rem;
+  padding: 0.5rem 0rem;
+
+  border: none;
+  background-color: transparent;
+  
+  border-bottom: 0.1rem solid #0d1b2a;
+  
+}
+
+#busqueda:focus {
+  border-bottom: 0.3rem solid #fb5607;
+}
+
+#busqueda {
+  transition: border-bottom 0.3s ease-in-out;
 }
 
 .menu-principal--lista {
@@ -58,7 +80,7 @@ main {
   list-style-type: none;
 }
 
-.btn-tipo {
+.btn-menu {
   cursor: pointer;
   padding: 1rem;
   border-radius: 2rem;
