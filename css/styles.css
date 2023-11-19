@@ -232,7 +232,11 @@ main {
   text-transform: uppercase;
 }
 
-.tipo-pokemon {
+.tipo {
+  padding: 1.5rem;
+  border-radius: 4rem;
+  font-weight: bold;
+  color: #ffff;
 
 }
 
