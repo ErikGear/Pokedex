@@ -53,10 +53,10 @@ const renderizadoTarjetasPokemon = () => {
   
               <div class="bg-pokemon-description">
                   <p class="pokemon-name">${pokemon.nombrePokemon}</p>
-                  <p class="bg-tipo-pokemon">
+                  <div class="bg-tipo-pokemon">
                   ${pokemon.tiposPokemon}
-                  </p>
-                  <p class="peso-pokemon">Peso: ${pokemon.pesoPokemon}kg</p>
+                  </div>
+                  <p class="peso-pokemon">${pokemon.pesoPokemon}kg</p>
               </div>
   
           </article>
@@ -72,14 +72,14 @@ const getCaracteristicas = (nombrePokemon, datosPokemon) => {
 
   //extrayendo los tipos de cada pokemon
   let tiposPokemon = datosPokemon.types.map(tipo => `
-    <p class="tipo-pokemon">${tipo.type.name}</p>
+    <p class="tipo-${tipo.type.name} tipo">${tipo.type.name}</p>
   `);
 
   tiposPokemon = tiposPokemon.join('');
 
 
 
-  console.log(tiposPokemon);
+  //console.log(tiposPokemon);
 
   const pesoPokemon = datosPokemon.weight;
   const habilidadesPokemon = [];
