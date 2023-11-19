@@ -46,7 +46,7 @@ const renderizadoTarjetasPokemon = () => {
   for (const pokemon of pokemonesCompletos) {
     const article = document.createRange().createContextualFragment(`
     <article class="pokemon-card">
-    <p class="idPokemon">${pokemon.idPokemon}</p>
+    <p class="idPokemon">#${pokemon.idPokemon}</p>
               <div class="bg-pokemon">
                   <img class="card-image" src="${pokemon.imagenPokemon}" alt="${pokemon.nombrePokemon}" />
               </div>
