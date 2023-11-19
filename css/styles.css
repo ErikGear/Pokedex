@@ -99,10 +99,10 @@ main {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.btn-tipo-normal {
+.tipo-normal {
   background-color: #9a8c98;
 }
-.btn-tipo-fire {
+.tipo-fire {
   background: rgb(252, 176, 69);
   background: linear-gradient(
     180deg,
@@ -111,22 +111,22 @@ main {
     rgba(193, 18, 31, 0.7315301120448179) 100%
   );
 }
-.btn-tipo-water {
+.tipo-water {
   background-color: #00b4d8;
 }
-.btn-tipo-grass {
+.tipo-grass {
   background-color: #8ac926;
 }
-.btn-tipo-flying {
+.tipo-flying {
   background-color: #14746f;
 }
-.btn-tipo-fighting {
+.tipo-fighting {
   background-color: #fcbf49;
 }
-.btn-tipo-poison {
+.tipo-poison {
   background-color: #8338ec;
 }
-.btn-tipo-electric {
+.tipo-electric {
   background: rgb(3, 4, 94);
   background: linear-gradient(
     180deg,
@@ -135,16 +135,16 @@ main {
     rgba(0, 150, 199, 0.9164733178654292) 100%
   );
 }
-.btn-tipo-ground {
+.tipo-ground {
   background-color: #99582a;
 }
-.btn-tipo-rock {
+.tipo-rock {
   background-color: #4a4e69;
 }
-.btn-tipo-psychic {
+.tipo-psychic {
   background-color: #284b63;
 }
-.btn-tipo-ice {
+.tipo-ice {
   background: rgb(61, 69, 87);
   background: linear-gradient(
     180deg,
@@ -153,7 +153,7 @@ main {
     rgba(63, 75, 79, 1) 100%
   );
 }
-.btn-tipo-bug {
+.tipo-bug {
   background: rgb(217, 4, 41);
   background: linear-gradient(
     180deg,
@@ -162,7 +162,7 @@ main {
     rgba(127, 79, 36, 1) 100%
   );
 }
-.btn-tipo-ghost {
+.tipo-ghost {
   background: rgb(20, 33, 61);
   background: linear-gradient(
     180deg,
@@ -171,7 +171,7 @@ main {
     rgba(229, 229, 229, 0.962877030162413) 100%
   );
 }
-.btn-tipo-steel {
+.tipo-steel {
   background: rgb(33, 37, 41);
   background: linear-gradient(
     180deg,
@@ -180,7 +180,7 @@ main {
     rgba(108, 117, 125, 1) 100%
   );
 }
-.btn-tipo-dragon {
+.tipo-dragon {
   background: rgb(252, 176, 69);
   background: linear-gradient(
     180deg,
@@ -189,7 +189,7 @@ main {
     rgba(193, 18, 31, 0.6612529002320185) 100%
   );
 }
-.btn-tipo-fairy {
+.tipo-fairy {
   background: rgb(33, 37, 41);
   background: linear-gradient(
     180deg,
@@ -221,6 +221,22 @@ main {
 }
 
 .pokemon-name {
+  text-transform: uppercase;
+}
+
+.bg-tipo-pokemon {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+
+  text-transform: uppercase;
+}
+
+.tipo-pokemon {
+
+}
+
+.peso-pokemon {
   text-transform: uppercase;
 }
 
