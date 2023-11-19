@@ -46,14 +46,16 @@ const renderizadoTarjetasPokemon = () => {
   for (const pokemon of pokemonesCompletos) {
     const article = document.createRange().createContextualFragment(`
     <article class="pokemon-card">
+    <p class="idPokemon">${pokemon.idPokemon}</p>
               <div class="bg-pokemon">
                   <img class="card-image" src="${pokemon.imagenPokemon}" alt="${pokemon.nombrePokemon}" />
               </div>
   
               <div class="bg-pokemon-description">
                   <p class="pokemon-name">${pokemon.nombrePokemon}</p>
-                  <p class="tipo-pokemon">${pokemon.tipoPokemon[0]}</p>
-                  <p class="tipo-pokemon">${pokemon.tipoPokemon[1]}</p>
+                  <p class="tipo-pokemon"></p>
+                  <p class="tipo-pokemon"></p>
+                  <p class="peso-pokemon">Peso: ${pokemon.pesoPokemon}</p>
               </div>
   
           </article>
@@ -64,10 +66,15 @@ const renderizadoTarjetasPokemon = () => {
 };
 
 const getCaracteristicas = (nombrePokemon, datosPokemon) => {
+  const idPokemon = datosPokemon.id;
   const imagenPokemon = datosPokemon.sprites.other["dream_world"].front_default;
   const tipoPokemon = [];
+
+  for (const tipo of datosPokemon.types) {
+    tipoPokemon.push(tipo.type.name);
+  }
   //tipoPokemon.push(datosPokemon.types[0].type.name);
-  //tipoPokemon.push(datosPokemon.types[1].type.name);
+  //tipoPokemon.push(datosPokemon.types[0].type.name);
 
   const pesoPokemon = datosPokemon.weight;
   const habilidadesPokemon = [];
@@ -79,6 +86,7 @@ const getCaracteristicas = (nombrePokemon, datosPokemon) => {
   //aramando el pokemon con sus propiedades
 
   const pokemonCompleto = {
+    idPokemon,
     nombrePokemon,
     imagenPokemon,
     tipoPokemon,

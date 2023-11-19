@@ -10,6 +10,16 @@ html {
 
 body {
   font-size: 16px;
+
+  font-family: "Roboto", sans-serif;
+
+  background: rgb(252, 176, 69);
+  background: linear-gradient(
+    180deg,
+    rgba(252, 176, 69, 1) 0%,
+    rgba(253, 104, 29, 0.9605568445475638) 50%,
+    rgba(193, 18, 31, 0.7315301120448179) 100%
+  );
 }
 
 main {
@@ -23,7 +33,6 @@ main {
 }
 
 .header {
-
   display: flex;
   justify-content: center;
 
@@ -41,6 +50,8 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  justify-items: center;
 
   width: 25rem;
   background-color: #f5f3f4;
@@ -69,3 +80,16 @@ main {
   height: 20rem;
 }
 
+.idPokemon {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-top: 0px;
+  margin-bottom: 0PX;
+}
+
+.pokemon-name {
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
