@@ -22,6 +22,21 @@ main {
   gap: 1.5rem;
 }
 
+.header {
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 20rem;
+}
+
+.titulo-principal__logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
 .pokemon-card {
   display: flex;
   flex-direction: column;
@@ -34,7 +49,14 @@ main {
   border-radius: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.pokemon-card:hover{
+.card-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.pokemon-card:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
@@ -47,9 +69,3 @@ main {
   height: 20rem;
 }
 
-.card-image {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-}
