@@ -30,7 +30,7 @@ const getPokemons = async () => {
       const respuestaDatosPokemon = await fetch(urlPokemon);
       const datosPokemonJson = await respuestaDatosPokemon.json();
 
-      //console.log(datosPokemonJson);
+      console.log(datosPokemonJson);
 
       //aramando al pokemon
       getCaracteristicas(nombrePokemon, datosPokemonJson);
@@ -56,6 +56,10 @@ const renderizadoTarjetasPokemon = () => {
                   <div class="bg-tipo-pokemon">
                   ${pokemon.tiposPokemon}
                   </div>
+                  <div class="bg-habilidades">
+                  <p>Habilidades</p>
+                  ${pokemon.habilidadesPokemon}
+                  </div>
                   <p class="peso-pokemon">${pokemon.pesoPokemon}kg</p>
               </div>
   
@@ -71,25 +75,28 @@ const getCaracteristicas = (nombrePokemon, datosPokemon) => {
   const imagenPokemon = datosPokemon.sprites.other["dream_world"].front_default;
 
   //extrayendo los tipos de cada pokemon
-  let tiposPokemon = datosPokemon.types.map(tipo => `
+  let tiposPokemon = datosPokemon.types.map(
+    (tipo) => `
     <p class="tipo-${tipo.type.name} tipo">${tipo.type.name}</p>
-  `);
+  `
+  );
 
-  tiposPokemon = tiposPokemon.join('');
-
-
+  tiposPokemon = tiposPokemon.join("");
 
   //console.log(tiposPokemon);
 
   const pesoPokemon = datosPokemon.weight;
-  const habilidadesPokemon = [];
 
-  for (const habilidad of datosPokemon.moves) {
-    habilidadesPokemon.push(habilidad.move.name);
-  }
+  //obteniendo las habilidades por cada pokemon
+  let habilidadesPokemon = datosPokemon.abilities.map(
+    (habilidad) => `
+  <p class="habilidad">${habilidad.ability.name}</p>
+`
+  );
 
-  //aramando el pokemon con sus propiedades
+  habilidadesPokemon = habilidadesPokemon.join("");
 
+  //armando el pokemon con sus propiedades
   const pokemonCompleto = {
     idPokemon,
     nombrePokemon,
