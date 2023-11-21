@@ -51,7 +51,6 @@ main {
 .bg-formulario {
   display: flex;
   gap: 1.5rem;
-  
 }
 
 #btn-buscar {
@@ -234,14 +233,21 @@ main {
 
 .tipo {
   padding: 1.5rem;
+  margin: 0.5rem;
   border-radius: 4rem;
   font-weight: bold;
   color: #ffff;
-
+  letter-spacing: 0.1rem;
 }
 
 .peso-pokemon {
+  display: inline-block;
   text-transform: uppercase;
+  font-weight: 900;
+  background-color: #e0e1dd;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 4rem;
 }
 
 .card-image {
@@ -261,7 +267,7 @@ main {
 }
 
 .bg-pokemon {
-  height: 20rem;
+  height: 13rem;
 }
 
 .idPokemon {
@@ -276,6 +282,33 @@ main {
   letter-spacing: 0.1rem;
   font-weight: bold;
   font-size: 2rem;
+}
+
+.bg-habilidades {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 0.8rem;
+}
+
+.habilidades {
+  text-align: center;
+  text-transform: uppercase;
+
+  font-weight: bold;
+}
+.habilidad {
+  text-transform: uppercase;
+  margin: 0rem;
+  padding: 1rem;
+  background-color: #ffbe0b;
+  border-radius: 3rem;
+}
+
+.filtro {
+  display: none;
 }
 
 .footer {
