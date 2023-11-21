@@ -125,7 +125,7 @@ formularioBusqueda.addEventListener('keyup', (e)=>{
 
   //console.log(nombrePokemon);
 
-   nombrePokemon.includes(e.target.value) ? tarjetaPokemon.classList.remove("filtro") : tarjetaPokemon.classList.add("filtro")
+   nombrePokemon.includes(e.target.value.toLowerCase()) ? tarjetaPokemon.classList.remove("filtro") : tarjetaPokemon.classList.add("filtro")
 
   }) 
  }
