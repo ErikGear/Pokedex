@@ -2,6 +2,9 @@ const pokemonesCompletos = [];
 
 const main = document.querySelector("main");
 
+const formularioBusqueda = document.getElementById("busqueda");
+//const botonBuscar = document.getElementById("btn-buscar");
+
 const url = "https://pokeapi.co/api/v2/pokemon?limit=102&offset=0";
 
 const getPokemons = async () => {
@@ -30,7 +33,7 @@ const getPokemons = async () => {
       const respuestaDatosPokemon = await fetch(urlPokemon);
       const datosPokemonJson = await respuestaDatosPokemon.json();
 
-      console.log(datosPokemonJson);
+      //console.log(datosPokemonJson);
 
       //aramando al pokemon
       getCaracteristicas(nombrePokemon, datosPokemonJson);
@@ -52,12 +55,14 @@ const renderizadoTarjetasPokemon = () => {
               </div>
   
               <div class="bg-pokemon-description">
-                  <p class="pokemon-name">${pokemon.nombrePokemon}</p>
+                  <p class="pokemon-name">
+                  ${pokemon.nombrePokemon}
+                  </p>
                   <div class="bg-tipo-pokemon">
                   ${pokemon.tiposPokemon}
                   </div>
+                  <p class="habilidades">Habilidades</p>
                   <div class="bg-habilidades">
-                  <p>Habilidades</p>
                   ${pokemon.habilidadesPokemon}
                   </div>
                   <p class="peso-pokemon">${pokemon.pesoPokemon}kg</p>
@@ -111,3 +116,17 @@ const getCaracteristicas = (nombrePokemon, datosPokemon) => {
 };
 
 getPokemons();
+
+
+formularioBusqueda.addEventListener('keyup', (e)=>{
+ if (e.target.matches("#busqueda")) {
+  document.querySelectorAll(".pokemon-card").forEach(tarjetaPokemon => {
+   const nombrePokemon = tarjetaPokemon.querySelector('.pokemon-name').textContent;
+
+  //console.log(nombrePokemon);
+
+   nombrePokemon.includes(e.target.value) ? tarjetaPokemon.classList.remove("filtro") : tarjetaPokemon.classList.add("filtro")
+
+  }) 
+ }
+});
