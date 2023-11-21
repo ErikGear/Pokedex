@@ -17,5 +17,5 @@ Cosas a tener en cuenta:
 - Uso de clases e instancias.
 - EcmaScript 6
 
-### Link del proyecto desplegado en github pages: 
-- [Pokedex](#pokedex)
+### Link del proyecto desplegado en netlify: 
+- [Pokedex](https://master--ornate-dusk-1469c9.netlify.app/)
